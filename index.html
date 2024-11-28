@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.loader {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  right: 50%;  display: flex;
+}
+
+.loader .ball {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ball {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 8px 5px, white 5%, black);
+  position: relative;
+  transform-origin: 50% -100px;
+}
+
+.ball:last-child {
+  animation: balance-right 1.2s infinite linear;
+}
+
+.ball:first-child {
+  animation: balance-left 1.2s infinite linear;
+}
+
+@keyframes balance-right {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
+  }
+
+  75% {
+    transform: rotate(-30deg);
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes balance-left {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
+  }
+
+  25% {
+    transform: rotate(30deg);
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <center>
+        <div class="loader">
+            <span class="ball ball1"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+            <span class="ball"></span>
+          </div>
+    </center>
+</body>
+</html>
